@@ -6,7 +6,7 @@ export const getWeek = (date: Date): number => {
 }
 
 export const getWeekStartEnd = (date: Date): { start: Date, end: Date } => {
-    const today = new Date()
+    const today = new Date(date)
 
     const dayOfWeek = today.getDay()
     const daysToSubtract = dayOfWeek === 0 ? 6 : dayOfWeek - 1
