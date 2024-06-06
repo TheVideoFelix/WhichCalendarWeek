@@ -1,3 +1,4 @@
+'use client'
 import {useEffect, useState} from "react"
 import {formatDate, getWeekStartEnd} from "@/lib/utils"
 
@@ -10,7 +11,7 @@ interface IDate {
     endOfWeek: Date
 }
 
-const WeekPeriod = ({ date }: IWeekPeriod) => {
+const WeekPeriod = ({date}: IWeekPeriod) => {
     const [weekPeriod, setWeekPeriod] = useState<IDate>({
         startOfWeek: new Date(),
         endOfWeek: new Date()
@@ -18,7 +19,7 @@ const WeekPeriod = ({ date }: IWeekPeriod) => {
 
 
     useEffect(() => {
-        const { start, end } = getWeekStartEnd(date);
+        const {start, end} = getWeekStartEnd(date);
 
         setWeekPeriod({
             startOfWeek: start,
@@ -26,8 +27,8 @@ const WeekPeriod = ({ date }: IWeekPeriod) => {
         })
 
 
-    }, [date]);
-    
+    }, [date]); // Re-run the effect when the date changes
+
     return (
         <div className="text-center text-secondary-text text-3xl m-9">
             <h2>{formatDate(weekPeriod.startOfWeek)}</h2>
