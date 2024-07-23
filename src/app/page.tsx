@@ -3,7 +3,7 @@ import WeekCard from "@/components/WeekCard"
 export default function Home() {
     return (
         <main className="h-screen flex flex-col">
-            <div className="h-full flex flex-col items-center justify-center">
+            <div className="h-full flex flex-col overflow-x-hidden items-center justify-center">
                 <WeekCard/>
             </div>
 
