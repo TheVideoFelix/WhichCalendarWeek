@@ -30,10 +30,10 @@ const WeekPeriod = ({date}: IWeekPeriod) => {
     }, [date]); // Re-run the effect when the date changes
 
     return (
-        <div className="text-center text-secondary-text text-2xl sm:text-3xl m-9" suppressHydrationWarning={true}>
-            <h2>{formatDate(weekPeriod.startOfWeek)}</h2>
+        <div className="text-center text-secondary-text text-2xl sm:text-3xl m-9">
+            <h2 suppressHydrationWarning={true}>{formatDate(weekPeriod.startOfWeek)}</h2>
             <h2>-</h2>
-            <h2>{formatDate(weekPeriod.endOfWeek)}</h2>
+            <h2 suppressHydrationWarning={true}>{formatDate(weekPeriod.endOfWeek)}</h2>
         </div>
     )
 }
