@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react';
 import {getWeek} from "@/lib/utils";
 
 interface IGetWeek {
