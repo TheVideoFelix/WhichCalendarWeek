@@ -1,8 +1,7 @@
 // Get the week number of a given date
-export const getWeek = (date: Date): number => {
-    const onejan = new Date(date.getFullYear(), 0, 1)
-    return Math.ceil((((date.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7)
-}
+import {getISOWeek} from "date-fns";
+
+export const getWeek = (date: Date): number => getISOWeek(date)
 
 // Get the start and end date of a week
 export const getWeekStartEnd = (date: Date): { start: Date, end: Date } => {

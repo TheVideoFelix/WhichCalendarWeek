@@ -17,23 +17,20 @@ const WeekPeriod = ({date}: IWeekPeriod) => {
         endOfWeek: new Date()
     })
 
-
     useEffect(() => {
         const {start, end} = getWeekStartEnd(date);
 
         setWeekPeriod({
             startOfWeek: start,
             endOfWeek: end
-        })
-
-
+        });
     }, [date]); // Re-run the effect when the date changes
 
     return (
         <div className="text-center text-secondary-text text-2xl sm:text-3xl m-9">
-            <h2 suppressHydrationWarning={true}>{formatDate(weekPeriod.startOfWeek)}</h2>
+            <h2>{formatDate(weekPeriod.startOfWeek)}</h2>
             <h2>-</h2>
-            <h2 suppressHydrationWarning={true}>{formatDate(weekPeriod.endOfWeek)}</h2>
+            <h2>{formatDate(weekPeriod.endOfWeek)}</h2>
         </div>
     )
 }
